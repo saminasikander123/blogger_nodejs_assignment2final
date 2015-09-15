@@ -1,0 +1,64 @@
+<!doctype html>
+<html>
+<head>
+    <title>Blogger</title>
+    <link rel="stylesheet" href="//netdna.bootstrapcdn.com/bootstrap/3.0.2/css/bootstrap.min.css">
+    <link rel="stylesheet" href="//netdna.bootstrapcdn.com/font-awesome/4.0.3/css/font-awesome.min.css">
+    <style>
+        body         { padding-top:80px; }
+    </style>
+</head>
+<body>
+<div class="container">
+
+    <div class="jumbotron text-center">
+        <h1><span class="fa fa-lock"></span> Blogger</h1>
+
+        <% if (typeof message !== 'undefined' && message.length > 0) { %>
+        <div class="alert alert-danger"><%= message %></div>
+        <% } %>
+
+        <% if (!user) { %>
+        <p>Login or Signup</p>
+
+        <a href="/" class="btn btn-default"><span class="fa fa-user"></span> Home</a>
+        <a href="/login" class="btn btn-default"><span class="fa fa-user"></span> Local Login</a>
+        <a href="/signup" class="btn btn-default"><span class="fa fa-user"></span> Local Signup</a>
+        <% } else { %>
+        <a href="/" class="btn btn-default"><span class="fa fa-user"></span> Home</a>
+        <a href="/profile" class="btn btn-default"><span class="fa fa-user"></span> Profile</a>
+        <a href="/logout" class="btn btn-default"><span class="fa fa-user"></span> Logout</a>
+        <% } %>
+    </div>
+
+    <div class="row">
+        <div class="well">
+            <h3><span class="fa fa-laptop"></span> Blog: <%= user.blogTitle %></h3>
+        </div>
+    </div>
+
+    <div class="row">
+        <div class="well">
+            <h3><span class="fa fa-laptop"></span> Posts</h3>
+            <ul>
+                <% posts.forEach(function(p) { %>
+                <li><a href="/post/<%= p.id %>"><%= p.title %> - <%= p.create_date %></a></li>
+                <% }); %>
+            </ul>
+        </div>
+    </div>
+
+    <div class="row">
+        <div class="well">
+            <h3><span class="fa fa-laptop"></span> Posts</h3>
+            <ul>
+                <% posts.forEach(function(p) { %>
+                <li><a href="/post/<%= p.id %>"><%= p.title %> - <%= p.create_date %></a></li>
+                <% }); %>
+            </ul>
+        </div>
+    </div>
+
+</div>
+</body>
+</html>
