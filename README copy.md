@@ -10,3 +10,6 @@ Here's what we'll be building:
 
 And after the user is logged in:
 ![Excercise TODO App](http://i.imgur.com/8omW2kR.png)
+
+![Video Walkthrough](blogger-assignment2.gif)
+
